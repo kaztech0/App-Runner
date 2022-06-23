@@ -7,7 +7,7 @@ root = tk.Tk()
 root.title('App Runner')
 apps = []
 
-root.configure(background='#2A2A2A')
+root.configure(background='#FF768F')
 
 
 if os.path.isfile('save.txt'):
@@ -27,7 +27,7 @@ def addApp():
     filetypes=(("executables", "*.exe"), ("all files", "*.*")))
     apps.append(filename)
     for app in apps:
-        label = tk.Label(frame, text=app, bg="gray")
+        label = tk.Label(frame, text=app, bg="#FFAEBD")
         label.pack()
 
 
@@ -36,20 +36,31 @@ def runApps():
         os.startfile(app)
 
 
-canvas = tk.Canvas(root, height=500, width=550, bg="#2A2A2A", highlightthickness=0)
+def removeFiles():
+    if os.path.exists("save.txt"):
+        os.remove("save.txt")
+
+
+canvas = tk.Canvas(root, height=500, width=550, bg="#FF768F", highlightthickness=0)
 canvas.pack()
 
-frame = tk.Frame(root, bg="gray")
+frame = tk.Frame(root, bg="#FFAEBD")
 frame.place(relwidth=0.8, relheight=0.8, relx=0.1, rely=0.1)
 
 
-openFile = tk.Button(root, text="Add Executable", padx=28,
-                     pady=2, fg="gray", bg="#2A2A2A", command=addApp)
+openFile = tk.Button(root, text="Add Executable", padx=38,
+                     pady=1, fg="white", bg="#FF768F", command=addApp)
 openFile.pack()
 
-runApps = tk.Button(root, text="Run All", padx=50,
-                     pady=2, fg="gray", bg="#2A2A2A", command=runApps)
+runApps = tk.Button(root, text="Run All", padx=60,
+                     pady=1, fg="white", bg="#FF768F", command=runApps)
 runApps.pack()
+
+removeFiles = tk.Button(root, text="Remove All", padx=49,
+                        pady=1, fg="white", bg="#FF768F", command=removeFiles)
+removeFiles.pack()
+
+
 
 
 for app in apps:
