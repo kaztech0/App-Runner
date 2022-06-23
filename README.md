@@ -17,4 +17,5 @@ Say you need to open a bunch of executables like Photoshop and Vegas Pro, this a
 
 # Screenshot:
 ![app runner green](https://user-images.githubusercontent.com/107978985/175274265-7724a1f3-3894-4624-bf04-27b13d217515.png)
+
 *screenshot of the green theme, other colour themes are avaliable.*
