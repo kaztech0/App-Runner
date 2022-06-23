@@ -1,3 +1,4 @@
+import atexit
 import tkinter as tk
 from tkinter import filedialog, Text, colorchooser
 import os
@@ -36,31 +37,24 @@ def runApps():
         os.startfile(app)
 
 
-def removeFiles():
-    if os.path.exists("save.txt"):
-        os.remove("save.txt")
-
-
 canvas = tk.Canvas(root, height=500, width=550, bg="#FF768F", highlightthickness=0)
 canvas.pack()
 
 frame = tk.Frame(root, bg="#FFAEBD")
 frame.place(relwidth=0.8, relheight=0.8, relx=0.1, rely=0.1)
 
+goodDay = tk.Button(root, text="Hello! :D", padx=60,
+            pady=0.1, fg="white", bg="#FF768F", borderwidth=0)
+goodDay.configure(font=("Helvetica", 18, "italic"))
+goodDay.pack()
 
 openFile = tk.Button(root, text="Add Executable", padx=38,
-                     pady=1, fg="white", bg="#FF768F", command=addApp)
+                     pady=2, fg="white", bg="#FF768F", command=addApp)
 openFile.pack()
 
 runApps = tk.Button(root, text="Run All", padx=60,
-                     pady=1, fg="white", bg="#FF768F", command=runApps)
+                     pady=2, fg="white", bg="#FF768F", command=runApps)
 runApps.pack()
-
-removeFiles = tk.Button(root, text="Remove All", padx=49,
-                        pady=1, fg="white", bg="#FF768F", command=removeFiles)
-removeFiles.pack()
-
-
 
 
 for app in apps:
