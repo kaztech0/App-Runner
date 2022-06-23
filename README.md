@@ -1,3 +1,4 @@
+![App Runner PNG](https://user-images.githubusercontent.com/107978985/175195197-509a4694-ea3c-42ca-be0d-bf5101c398d2.png)
 # App-Runner
 Add as many apps as you want for an easy one click start for your morning.
 
